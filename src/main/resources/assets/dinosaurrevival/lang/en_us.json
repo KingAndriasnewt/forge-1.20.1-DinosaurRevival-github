@@ -1,0 +1,23 @@
+{
+  "item.dinosaurrevival.dino_fossil": "Dino Fossil",
+  "item.dinosaurrevival.dino_fossil_clean": "Clean Dino Fossil",
+  "item.dinosaurrevival.plant_fossil": "Plant Fossil",
+  "item.dinosaurrevival.clean_plant_fossil": "Clean Plant Fossil",
+  "item.dinosaurrevival.horsetail_seeds": "Horsetail Seeds",
+  "item.dinosaurrevival.fan": "Fan",
+  "item.dinosaurrevival.motherboard": "Motherboard",
+  "item.dinosaurrevival.wires": "Wires",
+  "item.dinosaurrevival.small_meat": "Small Dino Meat",
+  "item.dinosaurrevival.medium_meat": "Medium Dino Meat",
+  "item.dinosaurrevival.large_meat": "Large Dino Meat",
+  "item.dinosaurrevival.cooked_small_meat": "Cooked Small Dino Meat",
+  "item.dinosaurrevival.cooked_medium_meat": "Cooked Medium Dino Meat",
+  "item.dinosaurrevival.cooked_large_meat": "Cooked Large Dino Meat",
+  "item.dinosaurrevival.thyla_placenta": "Thylacoleo Placenta",
+  "item.dinosaurrevival.trilobite_spawn": "Trilobite Spawn",
+  "item.dinosaurrevival.hybrid_heart": "Hybrid Heart",
+
+  "creativetab.dinosaur_revival": "Dinosaur Revival",
+  "creativetab.machinery": "Machinery"
+
+}
