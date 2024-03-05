@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "dinosaurrevival:block/triassic_fossil_block_texture_top",
+    "up": "dinosaurrevival:block/triassic_fossil_block_texture_top",
+    "north": "dinosaurrevival:block/triassic_fossil_block_texture",
+    "east": "dinosaurrevival:block/triassic_fossil_block_texture",
+    "south": "dinosaurrevival:block/triassic_fossil_block_texture",
+    "west": "dinosaurrevival:block/triassic_fossil_block_texture",
+    "particle": "dinosaurrevival:block/triassic_fossil_block_texture_top"
+  },
+  "render_type": "solid"
+}
