@@ -1,7 +1,10 @@
 package net.newt.dinosaurrevival;
 
 import com.mojang.logging.LogUtils;
+import mod.azure.azurelib.AzureLib;
+import mod.azure.azurelib.AzureLibMod;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +18,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.newt.dinosaurrevival.block.ModBlocks;
+import net.newt.dinosaurrevival.entity.ModEntities;
+import net.newt.dinosaurrevival.entity.client.PsitacosaurusRenderer;
 import net.newt.dinosaurrevival.item.ModCreativeModTabs;
 import net.newt.dinosaurrevival.item.ModItems;
 import org.slf4j.Logger;
@@ -36,6 +41,8 @@ public class DinosaurRevival
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModEntities.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -45,7 +52,7 @@ public class DinosaurRevival
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-
+        AzureLib.initialize();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -78,9 +85,7 @@ public class DinosaurRevival
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            EntityRenderers.register(ModEntities.PSITACOSAURUS.get(), PsitacosaurusRenderer::new);
         }
     }
 }
