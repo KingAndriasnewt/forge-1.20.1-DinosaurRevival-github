@@ -56,10 +56,10 @@ public class PsitacosaurusEntity extends Animal implements GeoEntity {
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(
                 new AnimationController<>(this, "baseAnim", event -> PlayState.CONTINUE)
-                        .triggerableAnim("death", RawAnimation.begin().thenLoop("idle")));
+                        .triggerableAnim("walking", RawAnimation.begin().thenLoop("walking")));
 
                 new AnimationController<>(this, "baseAnim", event -> PlayState.CONTINUE)
-                        .triggerableAnim("death", RawAnimation.begin().thenLoop("walking"));
+                        .triggerableAnim("idle", RawAnimation.begin().thenLoop("idle"));
     }
 
 
