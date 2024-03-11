@@ -20,10 +20,11 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.level.Level;
 import net.newt.dinosaurrevival.entity.ModEntities;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class PsitacosaurusEntity extends Animal implements GeoEntity {
-    private AnimatableInstanceCache cache = SingletonAnimatableInstanceCache(this);
+
 
     public PsitacosaurusEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -52,22 +53,18 @@ public class PsitacosaurusEntity extends Animal implements GeoEntity {
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<GeoAnimatable>(this, "controller", 0, this::predicate));
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(
+                new AnimationController<>(this, "baseAnim", event -> PlayState.CONTINUE)
+                        .triggerableAnim("death", RawAnimation.begin().thenLoop("idle")));
+
+                new AnimationController<>(this, "baseAnim", event -> PlayState.CONTINUE)
+                        .triggerableAnim("death", RawAnimation.begin().thenLoop("walking"));
     }
 
-    private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        if(AnimationState.getController()) {
-            AnimationState.getController().setAnimation(RawAnimation.begin().then("animation.psitacosaurus.walk", Animation.LoopType.LOOP));
-            return PlayState.CONTINUE;
-        }
-
-        AnimationState.getController().setAnimation(RawAnimation.begin().then("animation.psitacosaurus.idle", Animation.LoopType.LOOP));
-        return PlayState.CONTINUE;
-    }
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
+        return null;
     }
 }
