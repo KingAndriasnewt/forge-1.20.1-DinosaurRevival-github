@@ -1,9 +1,7 @@
 package net.newt.dinosaurrevival.entity.custom;
 
 import mod.azure.azurelib.animatable.GeoEntity;
-import mod.azure.azurelib.core.animatable.GeoAnimatable;
 import mod.azure.azurelib.core.animatable.instance.AnimatableInstanceCache;
-import mod.azure.azurelib.core.animatable.instance.SingletonAnimatableInstanceCache;
 import mod.azure.azurelib.core.animation.*;
 import mod.azure.azurelib.core.object.PlayState;
 import net.minecraft.server.level.ServerLevel;
@@ -20,7 +18,6 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.level.Level;
 import net.newt.dinosaurrevival.entity.ModEntities;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class PsitacosaurusEntity extends Animal implements GeoEntity {
@@ -58,7 +55,7 @@ public class PsitacosaurusEntity extends Animal implements GeoEntity {
                 new AnimationController<>(this, "baseAnim", event -> PlayState.CONTINUE)
                         .triggerableAnim("walking", RawAnimation.begin().thenLoop("walking")));
 
-                new AnimationController<>(this, "baseAnim", event -> PlayState.CONTINUE)
+                new AnimationController<>(this, "baseAnima", event -> PlayState.CONTINUE)
                         .triggerableAnim("idle", RawAnimation.begin().thenLoop("idle"));
     }
 
